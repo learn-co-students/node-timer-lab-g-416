@@ -17,7 +17,7 @@ By now you should now how to access CLI arguments and use `setTimeout()`. Let's 
 ## Instructions
 
 1. Create a CLI app which takes number of seconds in the following format: ns for n seconds, e.g., and 5s for five seconds. The command must look like `$ node timer 5s`.
-2. Implement the timer by printing the number of seconds left on a new line (in terminal / command prompt)
+2. Implement the timer by printing the number of seconds left on a new line (in terminal / command prompt). The file name must be `timer.js`.
 3. Test the CLI with `$ npm test`
 4. Enhance the app by adding minutes in the following format nmin, e.g., 1min for 1 minute. The command must look like `$ node timer 1min`.
 
