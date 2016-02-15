@@ -23,8 +23,10 @@ By now you should now how to access CLI arguments and use `setTimeout()`. Let's 
 1. Create a CLI app which takes number of seconds in the following format: `ns` for n seconds, e.g., and `5s` for five seconds. The command for 5 seconds must look like `$ node timer 5s`.
 2. Implement the timer by printing the number of seconds left on a new line. For example, if you passed `10s` as your argument, you should see the text `"Left: 10s"`, `"Left: 9s"`, etc. printed to the console.
 3. Use global objects `global.setInterval()` and `global.clearInterval()`
-4. Enhance the app by adding minutes in the following format nmin, e.g., 1min for 1 minute. The command for 1 minute must look like `$ node timer 1min`.
-5. Test the CLI with `$ npm test`
+4. Enhance the app by adding minutes in the following format nmin, e.g., `1min` for 1 minute. The command for 1 minute must look like `$ node timer 1min`.
+5. Utilize `process.exit()` to exit when there's an error and when there's no error but the time is up.
+6. Use `process` to access arguments from the command line.
+5. Test Timer with `$ npm test`
 
 
 ### Extra Info

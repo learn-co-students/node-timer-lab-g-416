@@ -15,5 +15,8 @@ if (!argv[2]) {
 var interval = setInterval(()=>{
   timeLeft --
   console.log(`Left: ${timeLeft}s`)
-  if (timeLeft == 0) clearInterval(interval)
+  if (timeLeft == 0) {
+    clearInterval(interval)
+    process.exit(0)
+  }
 }, 1000)
