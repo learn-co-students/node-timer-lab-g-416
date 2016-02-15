@@ -1,22 +1,23 @@
 {
-  "name": "node-install",
+  "name": "node-timer-lab",
   "version": "1.0.0",
-  "description": "Installing Node and npm",
+  "description": "Node CLI Timer App (Async Code)",
   "main": "index.js",
   "scripts": {
-    "test": "node test/index.js"
+    "test": "node_modules/mocha/bin/mocha test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/learn-co-curriculum/node-install.git"
+    "url": "git+https://github.com/learn-co-curriculum/node-timer-lab.git"
   },
-  "author": "",
+  "author": "Azat Mardan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/learn-co-curriculum/node-install/issues"
+    "url": "https://github.com/learn-co-curriculum/node-timer-lab/issues"
   },
-  "homepage": "https://github.com/learn-co-curriculum/node-install#readme",
+  "homepage": "https://github.com/learn-co-curriculum/node-timer-lab#readme",
   "devDependencies": {
-    "tape": "^4.3.0"
+    "mocha": "2.4.5",
+    "chai": "3.5.0"
   }
 }

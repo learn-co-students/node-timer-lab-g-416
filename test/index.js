@@ -1,42 +1,24 @@
-var test = require('tape'),
-  cp = require('child_process')
+var expect = require('chai').expect
+var path = require('path')
+var cp = require('child_process')
 
-test('timer on 5s', function (t) {
-  t.plan(2)
-  child = cp.spawn('node', ['timer', '5s'])
-  child.stdout.on('data', (data) => {
-    data = data.toString('utf8')
-    console.log(`stdout: ${data}`)
-    t.equal(data, 'Left: 4s\n')
-    child.kill()
-  })
-
-  child.stderr.on('data', (data) => {
-    console.log(`stderr: ${data}`)
-  })
-
-  child.on('close', (code) => {
-    console.log(`child process exited with code ${code}`)
-    t.equal(code, null)
+describe('"$ node timer 5s" command', function () {
+  it('must say that 4s left', function(done){
+    timer = cp.spawn('node', ['timer', '5s'])
+    timer.stdout.on('data', (data) => {
+      expect(data.toString('utf8')).to.equal('Left: 4s\n')
+      timer.kill()
+      done()
+    })
   })
 })
-
-test('timer on 1min', function (t) {
-  t.plan(2)
-  child = cp.spawn('node', ['timer', '1min'])
-  child.stdout.on('data', (data) => {
-    data = data.toString('utf8')
-    console.log(`stdout: ${data}`)
-    t.equal(data, 'Left: 59s\n')
-    child.kill()
-  })
-
-  child.stderr.on('data', (data) => {
-    console.log(`stderr: ${data}`)
-  })
-
-  child.on('close', (code) => {
-    console.log(`child process exited with code ${code}`)
-    t.equal(code, null)
+describe('"$ node timer 1min" command', function () {
+  it('must say that 59s left', function(done){
+    timer = cp.spawn('node', ['timer', '1min'])
+    timer.stdout.on('data', (data) => {
+      expect(data.toString('utf8')).to.equal('Left: 59s\n')
+      timer.kill()
+      done()
+    })
   })
 })
