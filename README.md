@@ -3,14 +3,14 @@
 ## Objectives
 
 1. Implement a Node CLI timer app which works from CLI (take time and counts down like a kitchen timer)
-2. Implement taking the CLI arguments: number of seconds or minutes 
+2. Implement taking the CLI arguments: number of seconds or minutes
 3. Implement the asynchronous sleep function so that the app knows when the time is up
 4. Implement the current coutdown so that the users can see how much time is left
 
 ## Introduction
 
 Imagine you've been hired to implement a timer app. The app must run on the super secret NASA server so it must be a command-line program. It must be flexible enough to accept different time intervals.
-This app will be used by astraunauts to cook food.
+This app will be used by astraunauts to cook food on a clandestine black ops mission.
 
 In this project, we'll using `process` and timer functions to build a command-line interface application which take number of second or minutes and counts them down.
 
