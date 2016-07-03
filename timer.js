@@ -1,18 +1,21 @@
-function timer(ns) {
+function timer(time) {
   var seconds = 0
   var minutes = 0
 
-  if (ns.charAt(ns.length -1) === 's') {
-    seconds = parseInt(ns.slice(0, -1))
+  if (time.charAt(time.length -1) === 's') {
+    seconds = parseInt(time.slice(0, -1))
   } else {
-    minutes = parseInt(ns.slice(0, -3))
+    minutes = parseInt(time.slice(0, -3))
     seconds += (minutes * 60)
   }
 
   setInterval(function() {
-    if (seconds >= 1) {
+    if (seconds > 1) {
       seconds -= 1
       console.log('Left: ' + seconds + 's')
+    } else if (seconds === 1) {
+      seconds -= 1
+      console.log('Beep! Beep! Beep!')
     } else {
       process.exit()
     }
