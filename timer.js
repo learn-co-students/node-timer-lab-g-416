@@ -1,3 +1,8 @@
+if (!process.argv[2]) {
+  console.log('Please provide an argument, e.g., 5s or 1min.')
+  process.exit(1)
+}
+
 const timeString = process.argv[2]
 const unitsIndex = timeString.search(/[a-zA-Z]/)
 var time = parseInt(timeString.slice(0, unitsIndex))
