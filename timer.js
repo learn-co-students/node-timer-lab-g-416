@@ -16,6 +16,7 @@ let interval = setInterval(()=>{
   timeLeft--;
   console.log(`Left: ${timeLeft}s`);
   if (timeLeft == 0) {
+    console.log('Blast off!');
     clearInterval(interval);
     process.exit(0);
   }
