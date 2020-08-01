@@ -27,7 +27,7 @@ switch(interval) {
 
 let count = setInterval(() => {
     i -= 1000
-    console.log('Left: ${i/1000}s')
+    console.log(`Left: ${i/1000}s`)
     if (i <= 0) {
         clearInterval(count)
     }
