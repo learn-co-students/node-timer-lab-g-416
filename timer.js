@@ -4,27 +4,36 @@
 // create switch for s and min
 
 process.argv.shift()
-var time = parseTime(process.argv[2])
+process.argv.shift()
 
+// create variable for time
+// build function to intake user input
+// function converts input to integer
+// countdown loop counts down to zero
+// switch case that that deciphers s and min
 
+let i = process.argv[0].charAt(0)
 
-function parseTime(string) {
-    var indicator = string.charAt(string.length - 1)
-    if (indicator == "s") {
-        return parseInt(string.substring(0, string.length-1), 10)
-    } else if (indicator == "n"){
-        return parseInt(string.substring(0, string.length-1), 10) * 60
-    } else {
-        console.log("Please pass in the arguments in the following format: 5s or 3min")
-        process.exit()
-    }
-    
+let interval = process.argv[0].substring(1)
+
+switch(interval) {
+    case "s":
+        i = i * 1000
+        break
+    case "min":
+        i = i * 60 * 1000
+
 }
 
-setInterval(function(){
-    time--
-    console.log("Left: " + time + "s")
-    if(time <= 0){
-        process.exit()
+let count = setInterval(() => {
+    i -= 1000
+    console.log('Left: ${i/1000}s')
+    if (i <= 0) {
+        clearInterval(count)
     }
 }, 1000)
+
+
+// charAt = method that returns the character at the specified index in a string
+// substring = method extracts characters from a string, between two specified indices, and returns the new sub string
+//substring extracts the characters in a string between "start" and "end", not including "end"
